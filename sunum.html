@@ -112,6 +112,57 @@ h1.title{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.04
 /* ---------- TABLE ---------- */
 .cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:14.5px}
 .cmp th,.cmp td{padding:13px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+/* 16 ve 17. slaytlar için özel tablo düzeni:
+   Başlık ve tablo yukarı alındı, açıklama/pill gibi alt öğeler gizlendi.
+   Amaç: tablonun tüm satırlarının 720px slayt alanında görünmesi. */
+.table-slide{
+  padding:18px 34px 24px 34px!important;
+}
+.table-slide .tag{
+  display:none!important;
+}
+.table-slide .kicker{
+  margin-bottom:4px!important;
+  font-size:11px!important;
+  letter-spacing:.20em!important;
+}
+.table-slide .slide-h{
+  font-size:30px!important;
+  line-height:1.02!important;
+  margin-bottom:0!important;
+}
+.table-slide .lead{
+  display:none!important;
+}
+.table-slide .glass{
+  margin-top:6px!important;
+  padding:4px 6px 0!important;
+  overflow:visible!important;
+}
+.table-slide .cmp{
+  font-size:14.2px!important;
+  line-height:1.26!important;
+}
+.table-slide .cmp th{
+  font-size:11.4px!important;
+  padding:8px 11px!important;
+}
+.table-slide .cmp td{
+  padding:8px 11px!important;
+}
+.table-slide .cmp td .crit,
+.table-slide .cmp .crit{
+  font-size:11px!important;
+  letter-spacing:.04em!important;
+}
+.table-slide .pageno{
+  bottom:8px!important;
+  right:18px!important;
+}
+.table-slide .table-note,
+.table-slide .table-bottom{
+  display:none!important;
+}
 .cmp thead th{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .cmp thead th.eu{color:var(--orange)}
 .cmp thead th.tr{color:var(--emerald)}
@@ -265,7 +316,7 @@ slides.push(`
 <div class="blob b" style="width:420px;height:420px;left:-140px;bottom:-160px"></div>
 <div class="kicker reveal"><span class="dot"></span>Problem & Bağlam</div>
 <h2 class="slide-h reveal" style="animation-delay:.05s">Ticaret büyüyor, <span class="grad">çevresel baskı</span> artıyor</h2>
-<p class="lead reveal" style="animation-delay:.1s;margin-top:6px">Dünya ticaretinin %80'inden fazlası deniz yoluyla taşınıyor. Limanlar bu zincirin kalbinde — ama aynı zamanda ciddi bir kirlilik kaynağı. Devletler limanlardan vazgeçemediği için çevresel zararı azaltmaya yönelir: <b style="color:#fff">yeşil liman politikaları.</b></p>
+<p class="lead reveal" style="animation-delay:.1s;margin-top:6px">Bu çalışmada çıkış noktam şu: Dünya ticaretinin büyük kısmı deniz yoluyla ilerliyor ve limanlar bu sistemin merkezinde yer alıyor. Ancak liman faaliyetleri hava, su, atık ve enerji tüketimi üzerinden çevresel baskı oluşturuyor. Bu nedenle limanları kapatmak değil, daha sürdürülebilir biçimde yönetmek gerekiyor; buna da yeşil liman politikaları diyoruz.</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px">
   <div class="card reveal" style="animation-delay:.16s">
     <div class="icon-box">${icon('ship')}</div>
@@ -296,14 +347,14 @@ slides.push(`
   <div>
     <div class="corner reveal" style="animation-delay:.12s">
       <div class="font-mono o" style="font-size:11px;letter-spacing:.18em;color:var(--orange);margin-bottom:10px">TEMEL PROBLEM</div>
-      <p style="line-height:1.6;color:#e2e8f0;font-size:16px">Türkiye'de çevresel sürdürülebilirlik için oluşturulan yeşil liman politikaları <b style="color:#fff">yetersiz.</b> AB genelinde ise <b style="color:#fff">ortak ve bütüncül bir yeşil liman politikası bulunmuyor.</b></p>
+      <p style="line-height:1.6;color:#e2e8f0;font-size:16px">Araştırmanın temel problemi şudur: Türkiye'de yeşil liman uygulamaları bulunsa da bunlar çevresel sürdürülebilirliği tam olarak sağlayacak düzeyde güçlü değildir. Avrupa tarafında ise çok gelişmiş örnekler vardır; fakat AB çapında tek ve bağlayıcı bir yeşil liman politikası bulunmamaktadır.</p>
     </div>
     <div class="card reveal" style="animation-delay:.2s;margin-top:18px">
       <div class="font-mono" style="font-size:11px;letter-spacing:.18em;color:var(--emerald);margin-bottom:12px">AMAÇLAR</div>
       <ul class="clean g">
-        <li>Türkiye & Avrupa yeşil liman uygulamalarını değerlendirmek</li>
-        <li>İki bölge arasında karşılaştırma yapmak</li>
-        <li>Aradaki farklılıkları ve nedenlerini ortaya koymak</li>
+        <li>Türkiye ve Avrupa’daki yeşil liman uygulamalarını anlaşılır biçimde değerlendirmek</li>
+        <li>İki bölgenin politika, teşvik ve uygulama farklarını karşılaştırmak</li>
+        <li>Ortaya çıkan farklılıkların nedenlerini liman örnekleri üzerinden açıklamak</li>
       </ul>
     </div>
   </div>
@@ -323,22 +374,22 @@ slides.push(`
 <div class="blob g" style="width:360px;height:360px;left:-120px;bottom:-140px"></div>
 <div class="kicker reveal"><span class="dot"></span>Yöntem</div>
 <h2 class="slide-h reveal" style="animation-delay:.05s">Yarı yapılandırılmış <span class="grad">görüşmeler</span></h2>
-<p class="lead reveal" style="animation-delay:.1s">Literatür taraması + nitel görüşme yöntemi. Açık uçlu esneklik ile sistematik yapı arasında denge kuran yarı yapılandırılmış teknik; üç limanın yeşil politikalarına dair zengin, betimleyici veri sağlar.</p>
+<p class="lead reveal" style="animation-delay:.1s">Yöntem olarak önce literatür taraması yapılmış, ardından üç limanla yarı yapılandırılmış görüşmeler gerçekleştirilmiştir. Bu yöntem, hem belirlenen sorulara bağlı kalmayı hem de limanların kendi uygulamalarını daha ayrıntılı biçimde anlatmasına imkân vermiştir.</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px">
   <div class="card reveal" style="animation-delay:.16s">
     <div style="display:flex;align-items:center;gap:12px"><div class="icon-box">${icon('globe')}</div><span class="font-mono o" style="color:var(--orange);font-size:12px;letter-spacing:.12em">AVRUPA · 1</span></div>
     <div class="font-heading" style="font-size:22px;font-weight:600;margin-top:16px">Antwerp-Bruges</div>
-    <p class="dim" style="font-size:14px;margin-top:8px;line-height:1.5">Belçika · Avrupa'nın önde gelen limanlarından, köklü yeşil dönüşüm geçmişi</p>
+    <p class="dim" style="font-size:14px;margin-top:8px;line-height:1.5">Belçika’da yer alan Antwerp-Bruges, Avrupa’daki güçlü yeşil dönüşüm örneklerinden biridir.</p>
   </div>
   <div class="card g reveal" style="animation-delay:.22s">
     <div style="display:flex;align-items:center;gap:12px"><div class="icon-box g">${icon('layers')}</div><span class="font-mono" style="color:var(--emerald);font-size:12px;letter-spacing:.12em">TÜRKİYE · 2</span></div>
     <div class="font-heading" style="font-size:22px;font-weight:600;margin-top:16px">MARPORT</div>
-    <p class="dim" style="font-size:14px;margin-top:8px;line-height:1.5">İstanbul · Türkiye'nin en büyük konteyner terminallerinden biri</p>
+    <p class="dim" style="font-size:14px;margin-top:8px;line-height:1.5">MARPORT, İstanbul’da yer alan ve Türkiye konteyner taşımacılığında önemli paya sahip bir terminaldir.</p>
   </div>
   <div class="card g reveal" style="animation-delay:.28s">
     <div style="display:flex;align-items:center;gap:12px"><div class="icon-box g">${icon('droplet')}</div><span class="font-mono" style="color:var(--emerald);font-size:12px;letter-spacing:.12em">TÜRKİYE · 2</span></div>
     <div class="font-heading" style="font-size:22px;font-weight:600;margin-top:16px">Solventaş</div>
-    <p class="dim" style="font-size:14px;margin-top:8px;line-height:1.5">Kocaeli/Dilovası · sıvı dökme yük & kimyasal depolama terminali</p>
+    <p class="dim" style="font-size:14px;margin-top:8px;line-height:1.5">Solventaş ise Kocaeli/Dilovası’nda sıvı dökme yük ve kimyasal depolama alanında faaliyet göstermektedir.</p>
   </div>
 </div>
 <div class="reveal" style="animation-delay:.34s;margin-top:26px;display:flex;gap:12px">
@@ -352,7 +403,7 @@ slides.push(`
 <div class="blob o" style="width:360px;height:360px;right:-130px;bottom:-130px"></div>
 <div class="kicker reveal"><span class="dot"></span>Liman Kavramı</div>
 <h2 class="slide-h reveal" style="animation-delay:.05s">Liman: ticaretin <span class="grad">düğüm noktası</span></h2>
-<p class="lead reveal" style="animation-delay:.1s">Liman, gemi–kıyı arayüzü olarak yük ve insanların aktarıldığı, diğer taşıma türleriyle entegre kritik altyapıdır. Ülkenin "dünyaya açılan kapısı" ve başlıca gelir-istihdam kaynağıdır.</p>
+<p class="lead reveal" style="animation-delay:.1s">Limanı yalnızca gemilerin yanaştığı bir alan olarak değil, deniz yolu ile kara, demir yolu ve iç su yollarını birleştiren stratejik bir lojistik merkez olarak düşünmek gerekir. Bu nedenle limanlar hem dış ticaretin kapısı hem de gelir ve istihdam üreten kritik altyapılardır.</p>
 <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:26px;margin-top:30px">
   <div class="card reveal" style="animation-delay:.16s">
     <div class="font-mono o" style="color:var(--orange);font-size:11px;letter-spacing:.18em;margin-bottom:16px">5 TEMEL İŞLEV</div>
@@ -380,7 +431,7 @@ slides.push(`
 <div class="tag">05 · Bölüm 2 — Gerekçe</div>
 <div class="blob b" style="width:400px;height:400px;left:-140px;top:-120px"></div>
 <div class="kicker reveal"><span class="dot"></span>Liman Kirliliği</div>
-<h2 class="slide-h reveal" style="animation-delay:.05s">Neden <span class="grad-g">yeşil</span> liman gerekli?</h2>
+<h2 class="slide-h reveal" style="animation-delay:.05s">Yeşil liman neden <span class="grad-g">gerekli?</span></h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:24px">
   <div class="card reveal" style="animation-delay:.14s">
     <div class="font-mono o" style="color:var(--orange);font-size:11px;letter-spacing:.18em;margin-bottom:14px">KİRLİLİK KAYNAKLARI</div>
@@ -417,7 +468,7 @@ slides.push(`
 <div class="blob g" style="width:380px;height:380px;right:-120px;bottom:-140px"></div>
 <div class="kicker reveal"><span class="dot"></span>Sürdürülebilirlik & Yeşil Liman</div>
 <h2 class="slide-h reveal" style="animation-delay:.05s">Üç boyut, <span class="grad-g">tek hedef</span></h2>
-<p class="lead reveal" style="animation-delay:.1s">Sürdürülebilir kalkınma; bugünün ihtiyaçlarını gelecek nesilleri tehlikeye atmadan karşılamaktır. Yeşil liman, sosyal–ekonomik–çevresel dengeyi bütünleştiren kapsamlı bir liman modelidir.</p>
+<p class="lead reveal" style="animation-delay:.1s">Sürdürülebilir kalkınma, bugünün ihtiyaçlarını karşılarken gelecek nesillerin kaynaklarını tüketmemek anlamına gelir. Yeşil liman yaklaşımı da tam olarak bunu liman ölçeğine taşır; ekonomik verimliliği, sosyal sorumluluğu ve çevresel korumayı birlikte ele alır.</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px">
   ${[['Enerji Tasarrufu','bolt','Akıllı enerji yönetimi, verimlilik, elektrifikasyon'],
      ['Çevre Koruma','leaf','Emisyon, atık ve kirliliğin azaltılması'],
@@ -495,7 +546,7 @@ slides.push(`
 <div class="blob o" style="width:360px;height:360px;left:-120px;bottom:-130px"></div>
 <div class="kicker reveal"><span class="dot"></span>Avrupa · ESPO</div>
 <h2 class="slide-h reveal" style="animation-delay:.05s">ESPO <span class="grad">5E Yaklaşımı</span></h2>
-<p class="lead reveal" style="animation-delay:.1s">AB'de yeşil limanı doğrudan düzenleyen ortak mevzuat <b style="color:#fff">yok.</b> Boşluğu ESPO'nun Yeşil Rehber'i (2012) ve EcoPorts araçları dolduruyor.</p>
+<p class="lead reveal" style="animation-delay:.1s">Avrupa’da yeşil limanı doğrudan ve tek başına düzenleyen ortak bir AB mevzuatı yoktur. Buna rağmen ESPO’nun Yeşil Rehberi ve EcoPorts araçları, limanlara yol gösteren güçlü bir çerçeve sunmaktadır.</p>
 <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px">
   ${[['Exemplifying','Örnek Olma'],['Enabling','Kolaylaştırma'],['Encouraging','Teşvik Etme'],['Engaging','İş Birliği'],['Enforcing','Denetleme']]
     .map((e,i)=>`<div class="corner reveal" style="animation-delay:${.16+i*.05}s;text-align:center;padding:20px 12px">
@@ -520,7 +571,7 @@ slides.push(`
 <div class="blob g" style="width:380px;height:380px;right:-120px;top:-110px"></div>
 <div class="kicker reveal"><span class="dot"></span>Türkiye · EcoPort</div>
 <h2 class="slide-h reveal" style="animation-delay:.05s">Türkiye'nin <span class="grad-g">Yeşil Liman</span> programı</h2>
-<p class="lead reveal" style="animation-delay:.1s">Ulaştırma ve Altyapı Bakanlığı yürütücülüğünde EcoPort programı; TSE yetkili kuruluş. Hedef: çevresel performans, enerji verimliliği ve uluslararası standartlara uyum.</p>
+<p class="lead reveal" style="animation-delay:.1s">Türkiye’de yeşil liman süreci Ulaştırma ve Altyapı Bakanlığı yürütücülüğünde ilerlemekte, TSE ise belgelendirme tarafında yetkili kuruluş olarak görev yapmaktadır. Programın amacı çevresel performansı artırmak, enerji verimliliğini güçlendirmek ve limanları uluslararası standartlara yaklaştırmaktır.</p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px">
   <div class="card g reveal" style="animation-delay:.16s">
     <div class="font-mono" style="color:var(--emerald);font-size:11px;letter-spacing:.16em;margin-bottom:14px">UYGULAMA ALANLARI</div>
@@ -547,7 +598,7 @@ slides.push(`
 <div class="tag">11 · Bölüm 2 — Veriler</div>
 <div class="blob o" style="width:360px;height:360px;left:-120px;bottom:-120px"></div>
 <div class="kicker reveal"><span class="dot"></span>Türkiye Liman Verileri</div>
-<h2 class="slide-h reveal" style="animation-delay:.05s">Rekor hacim, <span class="grad">artan baskı</span></h2>
+<h2 class="slide-h reveal" style="animation-delay:.05s">Yük hacmi büyüyor, <span class="grad">çevresel baskı</span> da artıyor</h2>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px">
   ${[['553,3M','ton · 2025 (rekor)','grad'],['+%4,0','2025 yıllık artış','grad'],['172','liman & iskele','grad-g'],['~8.333 km','kıyı şeridi','grad-g']]
     .map((s,i)=>`<div class="card reveal" style="animation-delay:${.12+i*.05}s">
@@ -576,7 +627,7 @@ slides.push(`
 <div class="tag">11 · Bölüm 2 — Sertifikasyon</div>
 <div class="blob b" style="width:360px;height:360px;right:-120px;bottom:-120px"></div>
 <div class="kicker reveal"><span class="dot"></span>Sertifikasyon Kriterleri & Anket</div>
-<h2 class="slide-h reveal" style="animation-delay:.05s">Kâğıt üstünde kriter, <span class="grad">sahada boşluk</span></h2>
+<h2 class="slide-h reveal" style="animation-delay:.05s">Sertifika var; <span class="grad">uygulama derinliği</span> tartışmalı</h2>
 <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:24px;margin-top:22px">
   <div class="card reveal" style="animation-delay:.14s">
     <div class="font-mono o" style="color:var(--orange);font-size:11px;letter-spacing:.16em;margin-bottom:12px">YEŞİL LİMAN SERTİFİKA KRİTERLERİ</div>
@@ -597,7 +648,7 @@ slides.push(`
   </div>
 </div>
 <div class="reveal" style="animation-delay:.4s;margin-top:16px;padding:14px 20px;border-left:2px solid var(--orange);background:rgba(247,147,26,.06);border-radius:0 12px 12px 0">
-  <p style="font-size:14.5px;color:#e2e8f0">⚠ Anket: üst düzey yöneticilerin yeşil liman stratejilerine dair <b style="color:#fff">bilgi düzeyi yetersiz</b> ve aralarında görüş ayrılığı mevcut.</p>
+  <p style="font-size:14.5px;color:#e2e8f0">Anket bulgusu: üst düzey yöneticilerin yeşil liman stratejilerine dair <b style="color:#fff">bilgi düzeyi yetersiz</b> ve aralarında görüş ayrılığı mevcut.</p>
 </div>
 `);
 
@@ -606,7 +657,7 @@ slides.push(`
 <div class="tag">12 · Bölüm 3 — Örnekler</div>
 <div class="blob o" style="width:340px;height:340px;left:-110px;top:-90px"></div>
 <div class="kicker reveal"><span class="dot"></span>Örnek Limanlar</div>
-<h2 class="slide-h reveal" style="animation-delay:.05s">Üç liman, <span class="grad">üç ölçek</span></h2>
+<h2 class="slide-h reveal" style="animation-delay:.05s">Örnek limanlar: <span class="grad">Avrupa ve Türkiye</span></h2>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px">
   <div class="card reveal" style="animation-delay:.16s">
     <div style="display:flex;align-items:center;gap:12px"><div class="icon-box">${icon('globe')}</div><span class="pill o">BELÇİKA</span></div>
@@ -635,22 +686,23 @@ slides.push(`
 
 /* 15 — KARŞILAŞTIRMA POLİTİKA */
 slides.push(`
-<div class="tag">13 · Bölüm 3 — Karşılaştırma</div>
+<style>.slide.active:has(.tag)::after{content:none}</style><div class="tag">13 · Bölüm 3 — Karşılaştırma</div>
 <div class="blob g" style="width:360px;height:360px;right:-120px;bottom:-120px"></div>
 <div class="kicker reveal"><span class="dot"></span>Avrupa vs Türkiye</div>
 <h2 class="slide-h reveal" style="animation-delay:.05s">Politika <span class="grad">karşılaştırması</span></h2>
-<div class="glass reveal" style="animation-delay:.14s;margin-top:20px;padding:8px 8px 0;overflow:hidden">
+<p class="lead reveal" style="animation-delay:.09s;font-size:15.5px;line-height:1.45;max-width:78ch">Bu tabloda Avrupa ile Türkiye arasındaki temel farkı görüyoruz: Avrupa’da bağlayıcı tek mevzuat olmasa da yerel uygulamalar ve teşvikler daha güçlü; Türkiye’de ise EcoPort vardır, fakat uygulama daha çok sertifika ve denetim çerçevesinde kalmaktadır.</p>
+<div class="glass reveal" style="animation-delay:.14s;margin-top:4px;padding:4px 6px 0;overflow:visible">
   <table class="cmp">
-    <thead><tr><th style="width:18%">Boyut</th><th class="eu" style="width:41%">Avrupa</th><th class="tr" style="width:41%">Türkiye</th></tr></thead>
+    <thead><tr><th style="width:17%">Boyut</th><th class="eu" style="width:41.5%">Avrupa</th><th class="tr" style="width:41.5%">Türkiye</th></tr></thead>
     <tbody>
-      <tr><td class="crit">Ortak Politika</td><td>AB genelinde ortak mevzuat <b class="no">yok</b>; ESPO rehberi ile yönlendirme</td><td>Bütüncül ulusal çerçeve <b class="no">eksik</b>; EcoPort sertifikası mevcut</td></tr>
-      <tr><td class="crit">Düzenleme</td><td>IMO + AB Direktifleri (2000/60/EC, gürültü, su)</td><td>Çevre Bakanlığı + Deniz Ticareti Gn. Md. denetimi</td></tr>
-      <tr><td class="crit">Yerel Güç</td><td>Rotterdam & Antwerp gibi limanların güçlü yerel uygulamaları</td><td>ISO entegre yönetim sistemi beklentisi; idari/teknik önlemler</td></tr>
-      <tr><td class="crit">Yaptırım</td><td>"Kirleten öder" + ESI/OPS teşvik mekanizmaları</td><td>İhlalde <b class="no">"Yeşil Liman" unvanı askıya alınır</b></td></tr>
+      <tr><td class="crit">Ortak politika</td><td>AB genelinde tek mevzuat <b class="no">yok</b>; ESPO rehberi ve EcoPorts araçları yön veriyor.</td><td>Bütüncül ulusal çerçeve <b class="no">sınırlı</b>; süreç daha çok EcoPort sertifikasıyla ilerliyor.</td></tr>
+      <tr><td class="crit">Düzenleme</td><td>IMO kuralları ve AB direktifleri su, hava, gürültü ve emisyon alanlarını destekliyor.</td><td>Çevre mevzuatı, Bakanlık denetimi ve Denizcilik Genel Müdürlüğü uygulamaları öne çıkıyor.</td></tr>
+      <tr><td class="crit">Yerel uygulama</td><td>Rotterdam ve Antwerp gibi limanlar kendi bütçeleriyle güçlü yerel projeler geliştirebiliyor.</td><td>ISO sistemleri, idari önlemler ve teknik yatırımlar var; fakat kapsam limana göre değişiyor.</td></tr>
+      <tr><td class="crit">Yaptırım/teşvik</td><td>"Kirleten öder" ilkesi; ESI, OPS ve indirim gibi uygulamalarla destekleniyor.</td><td>İhlalde <b class="no">Yeşil Liman unvanı askıya alınabiliyor</b>; paydaş teşviki sınırlı kalıyor.</td></tr>
     </tbody>
   </table>
 </div>
-<p class="reveal dim" style="animation-delay:.3s;margin-top:18px;font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em">Tablo 3.1'den uyarlanmıştır</p>
+<p class="reveal dim table-note" style="animation-delay:.3s;margin-top:4px;font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em">Tablo 3.1'den uyarlanmıştır</p>
 `);
 
 /* 16 — BULGULAR 5 BOYUT */
@@ -658,20 +710,21 @@ slides.push(`
 <div class="tag">13 · Bölüm 3 — Bulgular</div>
 <div class="blob o" style="width:360px;height:360px;left:-120px;top:-100px"></div>
 <div class="kicker reveal"><span class="dot"></span>Görüşme Bulguları</div>
-<h2 class="slide-h reveal" style="animation-delay:.05s">5 boyutta <span class="grad">net ayrışma</span></h2>
-<div class="glass reveal" style="animation-delay:.14s;margin-top:18px;padding:8px 8px 0;overflow:hidden">
+<h2 class="slide-h reveal" style="animation-delay:.05s">Görüşmelerde <span class="grad">5 ana fark</span></h2>
+<p class="lead reveal" style="animation-delay:.09s;font-size:15.5px;line-height:1.45;max-width:78ch">Görüşmelerin özeti şu: Antwerp-Bruges tarafında teşvik, alternatif enerji ve paydaş yönlendirme daha görünürdür. Türkiye örneklerinde ise çevre yönetimi ve sertifikasyon vardır; ancak teşvik ve yaptırım gücü daha sınırlıdır.</p>
+<div class="glass reveal" style="animation-delay:.14s;margin-top:4px;padding:4px 6px 0;overflow:visible">
   <table class="cmp">
-    <thead><tr><th style="width:20%">Boyut</th><th class="eu">Antwerp-Bruges</th><th class="tr">MARPORT & Solventaş</th></tr></thead>
+    <thead><tr><th style="width:18%">Boyut</th><th class="eu">Antwerp-Bruges</th><th class="tr">MARPORT & Solventaş</th></tr></thead>
     <tbody>
-      <tr><td class="crit">Yaptırım</td><td><span class="ok">●</span> ESI %10 indirim · ~€500K · OPS teşviki</td><td><span class="no">●</span> Paydaş yaptırımı yok (rekabet kaygısı)</td></tr>
-      <tr><td class="crit">Devlet Teşviki</td><td><span class="ok">●</span> Flaman hük. → ECLUSE stratejik destek</td><td><span class="no">●</span> Teşvik yok → maliyet öz kaynaktan</td></tr>
-      <tr><td class="crit">Çevre Politikası</td><td><span class="ok">●</span> Karbon ayak izi <b>-%8,8</b> (2012/2000)</td><td><span class="ok">●</span> ISO 14064-1 yıllık · Solventaş VOC tutma</td></tr>
-      <tr><td class="crit">Maliyet</td><td><span class="ok">●</span> Alternatif Enerji Merkezi yatırımı</td><td>TSE denetim, mühendislik · Solventaş düşük</td></tr>
-      <tr><td class="crit">Alt. Enerji</td><td><span class="ok">●</span> Rüzgâr + 1.056 MWe kojenerasyon</td><td><span class="no">●</span> Yok (MARPORT: gelecekte çatı GES)</td></tr>
+      <tr><td class="crit">Yaptırım</td><td><span class="ok">●</span> ESI kapsamında indirim, OPS teşviki ve çevreci gemiyi ödüllendiren yapı var.</td><td><span class="no">●</span> Paydaşlara doğrudan yaptırım yok; rekabet kaygısı belirleyici oluyor.</td></tr>
+      <tr><td class="crit">Devlet teşviki</td><td><span class="ok">●</span> Flaman hükümeti ECLUSE gibi projeleri stratejik destekle güçlendiriyor.</td><td><span class="no">●</span> Düzenli teşvik sınırlı; yatırımlar çoğunlukla işletmenin öz kaynağıyla yapılıyor.</td></tr>
+      <tr><td class="crit">Çevre politikası</td><td><span class="ok">●</span> Karbon ayak izi azaltımı ve uzun vadeli izleme daha sistematik ilerliyor.</td><td><span class="ok">●</span> ISO 14064-1, VOC tutma ve atık yönetimi gibi uygulamalar öne çıkıyor.</td></tr>
+      <tr><td class="crit">Maliyet</td><td><span class="ok">●</span> Alternatif enerji merkezi gibi yüksek maliyetli yatırımlar yapılabiliyor.</td><td>TSE denetimi ve mühendislik maliyeti var; Solventaş’ta belge maliyeti daha düşük görülüyor.</td></tr>
+      <tr><td class="crit">Alternatif enerji</td><td><span class="ok">●</span> Rüzgâr, kojenerasyon ve endüstriyel buhar ağı aktif biçimde kullanılıyor.</td><td><span class="no">●</span> Mevcut kullanım sınırlı; MARPORT için çatı GES geleceğe dönük planlanıyor.</td></tr>
     </tbody>
   </table>
 </div>
-<div class="reveal" style="animation-delay:.3s;margin-top:16px;display:flex;gap:12px;align-items:center">
+<div class="reveal table-bottom" style="animation-delay:.3s;margin-top:4px;display:flex;gap:12px;align-items:center">
   <span class="pill o">${icon('bolt')} ECLUSE: ~100.000 ton CO₂/yıl tasarruf ≈ 50 türbin</span>
 </div>
 <style>.pill svg{width:14px;height:14px}</style>
@@ -685,10 +738,10 @@ slides.push(`
 <h2 class="slide-h reveal" style="animation-delay:.05s">Temel <span class="grad-g">çıkarımlar</span></h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px">
   ${[
-    ['globe','Ortak politika yok','Ne AB ne Türkiye bütüncül bir yeşil liman politikasına sahip; boşluk ESPO ve ulusal sertifikasyonla dolduruluyor.'],
-    ['coins','Belirleyici: mali güç','Avrupa limanları kurumsal yapı ve finansal güç sayesinde kapsamlı projeler yürütüyor (Antwerp, Rotterdam).'],
-    ['scale','Türkiye kriterleri yetersiz','EcoPort kriterleri, limanların ekosistem üzerindeki etkisini önlemek için yeterli değil (yazarın değerlendirmesi).'],
-    ['shield','Paydaş yaptırımı yok','Türk limanları rekabet ve piyasa koşulları nedeniyle paydaşlarına yaptırım uygulayamıyor.']
+    ['globe','Ortak politika yok','Sonuç olarak hem Avrupa’da hem Türkiye’de eksik kalan ortak nokta, bütüncül ve bağlayıcı yeşil liman politikasının sınırlı olmasıdır. Avrupa’da bu boşluk daha çok ESPO ve yerel uygulamalarla, Türkiye’de ise EcoPort sertifikasyonu ile doldurulmaktadır.'],
+    ['coins','Belirleyici: mali güç','Avrupa limanlarının daha kapsamlı çevre projeleri yürütebilmesinde kurumsal kapasite, finansman imkânı ve kamu desteği belirleyici görünmektedir. Antwerp-Bruges bu açıdan güçlü bir örnek sunmaktadır.'],
+    ['scale','Türkiye kriterleri yetersiz','Türkiye’de EcoPort önemli bir başlangıçtır; ancak kriterlerin ekosistem üzerindeki etkileri tamamen önleyecek kadar güçlü ve ölçülebilir hâle getirilmesi gerekmektedir.'],
+    ['shield','Paydaş yaptırımı yok','Türkiye’de liman işletmeleri, rekabet kaygısı ve piyasa koşulları nedeniyle paydaşlarına doğrudan yaptırım uygulamakta zorlanmaktadır. Bu durum çevre politikalarının sahadaki etkisini sınırlamaktadır.']
   ].map((c,i)=>`<div class="card reveal" style="animation-delay:${.14+i*.06}s;display:flex;gap:16px;align-items:flex-start">
       <div class="icon-box ${i===0||i===1?'':'g'}">${icon(c[0])}</div>
       <div><div class="font-heading" style="font-size:18px;font-weight:600">${c[1]}</div>
@@ -708,7 +761,7 @@ slides.push(`
     <div><div class="font-mono o" style="color:var(--orange);font-size:11px;letter-spacing:.18em">ANA ÖNERİ</div>
     <div class="font-heading" style="font-size:24px;font-weight:600;margin-top:4px">Devlet, limanları aktif olarak <span class="grad">teşvik etmeli</span></div></div>
   </div>
-  <p style="font-size:16px;color:#e2e8f0;line-height:1.6;margin-top:16px">Yalnızca böylece Türk limanları maliyet kaygısından uzaklaşıp gerçek anlamda çevresel fayda sağlayan uygulamalar geliştirebilir.</p>
+  <p style="font-size:16px;color:#e2e8f0;line-height:1.6;margin-top:16px">Bu nedenle devlet desteği yalnızca maddi bir kolaylık değil, yeşil dönüşümün sürdürülebilir hâle gelmesi için temel bir araçtır. Teşvikler arttıkça limanlar maliyet kaygısından uzaklaşıp çevresel faydası yüksek yatırımlara yönelebilir.</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px">
   ${[['coins','Finansal teşvik','Vergi indirimi, hibe ve kredi mekanizmaları'],
@@ -746,7 +799,7 @@ slides.push(`
 const stage = document.getElementById('stage');
 slides.forEach((html,i)=>{
   const d = document.createElement('section');
-  d.className='slide'; d.dataset.index=i; d.innerHTML=html;
+  d.className='slide'; d.dataset.index=i; if(i===15||i===16)d.classList.add('table-slide'); d.innerHTML=html;
   if(i!==slides.length-1 && i!==0){
     const pn=document.createElement('div'); pn.className='pageno';
     pn.textContent=String(i).padStart(2,'0')+' / '+String(slides.length-2).padStart(2,'0');
